@@ -16,7 +16,7 @@ const receiveLocationFail = () => ({
 export const fetchLocation = () => {
     return dispatch => {
         dispatch(requestLocation());
-        return fetch('http://ip-api.com/json')
+        return fetch('https://ipapi.co/json')
             .then(data=>data.json())
             .then(data=>dispatch(receiveLocationSuccess(data.city)))
             .catch(error => dispatch(receiveLocationFail(error)))
